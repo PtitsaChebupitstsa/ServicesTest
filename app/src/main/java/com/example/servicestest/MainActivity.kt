@@ -30,6 +30,9 @@ class MainActivity : AppCompatActivity() {
             ContextCompat.startForegroundService(this,MyForegroundService.intent(this))
         }
 
+        binding.intentService.setOnClickListener {
+            startService(MyIntentService.intent(this))
+        }
     }
 
 
