@@ -1,5 +1,8 @@
 package com.example.servicestest
 
+import android.app.Notification
+import android.app.NotificationChannel
+import android.app.NotificationManager
 import android.app.Service
 import android.content.Context
 import android.content.Intent
@@ -16,6 +19,7 @@ private val coroutineScope = CoroutineScope(Dispatchers.Main)
     override fun onCreate() {
         super.onCreate()
         log("onCreate")
+
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
@@ -45,6 +49,7 @@ private val coroutineScope = CoroutineScope(Dispatchers.Main)
     }
 companion object{
     private const val EXTRA_START = "start"
+
     fun intent(context: Context,start :Int):Intent{
         return Intent(context,MyService::class.java).apply {
 putExtra(EXTRA_START,start)
